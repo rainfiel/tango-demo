@@ -1,0 +1,29 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "tango-demo", "Assembly-CSharp.csproj", "{E90A67F0-C3A2-E0B8-6F9F-7CA4EBE8C04E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "tango-demo", "Assembly-CSharp-Editor.csproj", "{E006558E-95DC-9551-86A7-3E5A17EFE66D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E90A67F0-C3A2-E0B8-6F9F-7CA4EBE8C04E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E90A67F0-C3A2-E0B8-6F9F-7CA4EBE8C04E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E90A67F0-C3A2-E0B8-6F9F-7CA4EBE8C04E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E90A67F0-C3A2-E0B8-6F9F-7CA4EBE8C04E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E006558E-95DC-9551-86A7-3E5A17EFE66D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E006558E-95DC-9551-86A7-3E5A17EFE66D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E006558E-95DC-9551-86A7-3E5A17EFE66D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E006558E-95DC-9551-86A7-3E5A17EFE66D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(MonoDevelopProperties) = preSolution
+		StartupItem = Assembly-CSharp.csproj
+	EndGlobalSection
+EndGlobal
