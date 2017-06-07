@@ -348,6 +348,28 @@ public class TangoDynamicMesh : MonoBehaviour, ITango3DReconstruction
         m_meshes.Clear();
     }
 
+    public void MeshSerialize(string filepath)
+    {
+        var stream = new MemoryStream();
+        var buf = new BinaryWriter(stream, Encoding.ASCII);
+
+        AndroidHelper.ShowAndroidToastMessage("Serialize mesh...");
+        foreach (TangoSingleDynamicMesh tmesh in m_meshes.Values)
+        {
+            Mesh mesh = tmesh.m_mesh;
+            byte[] m = MeshSerializer.WriteMesh(mesh, false);
+
+            buf.Write(m.Length);
+            buf.Write(m, 0, m.Length);
+            Debug.Log("..............:" + m.Length);
+        }
+        
+        StreamWriter sw = new StreamWriter(filepath, false, Encoding.ASCII);
+        sw.AutoFlush = true;
+        stream.WriteTo(sw.BaseStream);
+        AndroidHelper.ShowAndroidToastMessage(string.Format("Exported: {0}", filepath));
+    }
+
     /// <summary>
     /// Exports the constructed mesh to an OBJ file format. The file will include info
     /// based on the enabled options in TangoApplication.
