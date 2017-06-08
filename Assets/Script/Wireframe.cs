@@ -81,14 +81,7 @@ public class Wireframe : MonoBehaviour
     {
         return gameObject.transform.TransformPoint(vec);
     }
-
-    /*
-    ████████       █  █  █▀▀▄  █▀▀▄  ▄▀▀▄  ▀▀█▀▀  █▀▀▀ 
-    ████████       █  █  █▀▀   █  █  █■■█    █    █■■  
-    ████████       ▀▄▄▀  █     █▄▄▀  █  █    █    █▄▄▄ 
-    */
-
-
+    
     void OnRenderObject()
     {
         gameObject.GetComponent<Renderer>().enabled = render_mesh_normaly;

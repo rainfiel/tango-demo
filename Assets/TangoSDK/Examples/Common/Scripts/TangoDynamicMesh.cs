@@ -672,6 +672,10 @@ public class TangoDynamicMesh : MonoBehaviour, ITango3DReconstruction
                 meshCollider.sharedMesh = dynamicMesh.m_mesh;
                 dynamicMesh.m_meshCollider = meshCollider;
             }
+
+            newObj.AddComponent<NavMeshSourceTag>();
+            MeshCollider mc = newObj.AddComponent<MeshCollider>();
+            mc.sharedMesh = dynamicMesh.m_mesh;
             
             m_meshes.Add(gridIndex, dynamicMesh);
             _UpdateBounds(gridIndex);
