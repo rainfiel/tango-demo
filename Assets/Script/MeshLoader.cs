@@ -26,6 +26,7 @@ public class MeshLoader : MonoBehaviour {
         Debug.Log(sw.BaseStream.Length);
 
         var length = sw.BaseStream.Length;
+        var idx = 0;
         while(length > 0)
         {
             var s = buf.ReadInt32();
@@ -34,6 +35,9 @@ public class MeshLoader : MonoBehaviour {
 
             GameObject newObj = new GameObject();
             newObj.transform.parent = transform;
+            newObj.name = "mesh_" + idx++;
+            newObj.AddComponent<Wireframe>();
+
             MeshFilter meshFilter = newObj.AddComponent<MeshFilter>();
             meshFilter.mesh = MeshSerializer.ReadMesh(b);
 

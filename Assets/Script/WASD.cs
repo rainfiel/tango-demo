@@ -4,7 +4,7 @@ using UnityEngine;
 public class WASD : MonoBehaviour
 {
     public Transform target;
-    public float distance = 20.0f;
+    public float distance = 6.0f;
     public float zoomSpd = 2.0f;
 
     public float xSpeed = 240.0f;
