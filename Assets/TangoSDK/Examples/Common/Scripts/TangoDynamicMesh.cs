@@ -23,6 +23,7 @@ using System.IO;
 using System.Text;
 using Tango;
 using UnityEngine;
+using UnityEngine.AI;
 using UnityEngine.Rendering;
 
 /// <summary>
@@ -162,6 +163,8 @@ public class TangoDynamicMesh : MonoBehaviour, ITango3DReconstruction
     /// </summary>
     private Bounds m_bounds;
 
+    private Transform viewRoot;
+
     /// <summary>
     /// Constructor of TangoDynamicMesh.
     /// </summary>
@@ -224,6 +227,12 @@ public class TangoDynamicMesh : MonoBehaviour, ITango3DReconstruction
         {
             _InitGridIndexConfigs();
         }
+
+        var root = transform.Find("viewRoot");
+        if (root)
+            viewRoot = root;
+        else
+            viewRoot = transform;
     }
 
     /// <summary>
@@ -346,6 +355,22 @@ public class TangoDynamicMesh : MonoBehaviour, ITango3DReconstruction
         }
 
         m_meshes.Clear();
+    }
+
+    public void UpdateNavMesh()
+    {
+        var surface = GetComponent<NavMeshSurface>();
+        surface.BuildNavMesh();
+        AndroidHelper.ShowAndroidToastMessage("Build NavMesh done...");
+    }
+
+    public void Set3DREnable(bool enable)
+    {
+        var renders = viewRoot.gameObject.GetComponentsInChildren<MeshRenderer>();
+        foreach (var r in renders)
+        {
+            r.enabled = enable;
+        }
     }
 
     public void MeshSerialize(string filepath)
@@ -604,13 +629,15 @@ public class TangoDynamicMesh : MonoBehaviour, ITango3DReconstruction
     /// <param name="needsResize">List to which indices needing a future resize will be added.</param>
     private void _UpdateMeshAtGridIndex(Tango3DReconstruction.GridIndex gridIndex, List<Tango3DReconstruction.GridIndex> needsResize)
     {
+        var modifier = GetComponent<NavMeshModifier>();
+
         TangoSingleDynamicMesh dynamicMesh;
         bool createNewMeshSegment = !m_meshes.TryGetValue(gridIndex, out dynamicMesh);
         if (createNewMeshSegment)
         {
             // build a dynamic mesh as a child of this game object.
             GameObject newObj = new GameObject();
-            newObj.transform.parent = transform;
+            newObj.transform.parent = viewRoot;
             newObj.name = string.Format("{0},{1},{2}", gridIndex.x, gridIndex.y, gridIndex.z);
             newObj.layer = gameObject.layer;
             dynamicMesh = newObj.AddComponent<TangoSingleDynamicMesh>();
@@ -673,10 +700,10 @@ public class TangoDynamicMesh : MonoBehaviour, ITango3DReconstruction
                 dynamicMesh.m_meshCollider = meshCollider;
             }
 
-            newObj.AddComponent<NavMeshSourceTag>();
-            MeshCollider mc = newObj.AddComponent<MeshCollider>();
-            mc.sharedMesh = dynamicMesh.m_mesh;
-            
+            // append here
+            var m = newObj.AddComponent<NavMeshModifier>();
+            m.m_AffectedAgents = modifier.m_AffectedAgents;
+
             m_meshes.Add(gridIndex, dynamicMesh);
             _UpdateBounds(gridIndex);
         }

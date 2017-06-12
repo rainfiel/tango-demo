@@ -2,7 +2,7 @@ Shader "UCLA Game Lab/Wireframe/Single-Sided"
 {
 	Properties 
 	{
-		_Color ("Line Color", Color) = (1,1,1,1)
+		_Color ("Line Color", Color) = (1,1,1,0.3)
 		_MainTex ("Main Texture", 2D) = "white" {}
 		_Thickness ("Thickness", Float) = 1
 	}
@@ -14,7 +14,7 @@ Shader "UCLA Game Lab/Wireframe/Single-Sided"
 			Tags { "RenderType"="Transparent" "Queue"="Transparent" }
 
 			Blend SrcAlpha OneMinusSrcAlpha 
-			ZWrite Off
+			ZWrite On
 			LOD 200
 			
 			CGPROGRAM

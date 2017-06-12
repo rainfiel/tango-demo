@@ -4,6 +4,7 @@ using System.Collections;
 public class KittyUIController : MonoBehaviour
 {
     public GameObject m_kitten;
+    public GameObject m_Agent;
     private TangoPointCloud m_pointCloud;
 
     void Start()
@@ -42,7 +43,8 @@ public class KittyUIController : MonoBehaviour
             Vector3 up = plane.normal;
             Vector3 right = Vector3.Cross(plane.normal, cam.transform.forward).normalized;
             Vector3 forward = Vector3.Cross(right, plane.normal).normalized;
-            Instantiate(m_kitten, planeCenter, Quaternion.LookRotation(forward, up));
+         //   Instantiate(m_kitten, planeCenter, Quaternion.LookRotation(forward, up));
+            Instantiate(m_Agent, planeCenter, Quaternion.LookRotation(forward, up));
         }
         else
         {

@@ -59,10 +59,10 @@ public class LocalNavMeshBuilder : MonoBehaviour
     void UpdateNavMesh(bool asyncUpdate = false)
     {
         NavMeshSourceTag.Collect(ref m_Sources);
-        var defaultBuildSettings = NavMesh.GetSettingsByID(0);
+        var defaultBuildSettings = NavMesh.GetSettingsByID(1);
         var bounds = QuantizedBounds();
         UpdateBDVertex(bounds);
-
+        
         if (asyncUpdate)
             m_Operation = NavMeshBuilder.UpdateNavMeshDataAsync(m_NavMesh, defaultBuildSettings, m_Sources, bounds);
         else
@@ -78,7 +78,7 @@ public class LocalNavMeshBuilder : MonoBehaviour
         vertex[2] = new Vector3(min.x, min.y, max.z);
         vertex[3] = new Vector3(min.x, max.y, min.z);
         vertex[4] = new Vector3(max.x, min.y, min.z);
-        vertex[5] = new Vector3(min.x, max.y, max.y);
+        vertex[5] = new Vector3(min.x, max.y, max.z);
         vertex[6] = new Vector3(max.x, min.y, max.z);
         vertex[7] = new Vector3(max.x, max.y, min.z);
     }
@@ -100,7 +100,7 @@ public class LocalNavMeshBuilder : MonoBehaviour
 
     void OnDrawGizmosSelected()
     {
-    /*    if (m_NavMesh)
+        if (m_NavMesh)
         {
             Gizmos.color = Color.green;
             Gizmos.DrawWireCube(m_NavMesh.sourceBounds.center, m_NavMesh.sourceBounds.size);
@@ -112,7 +112,7 @@ public class LocalNavMeshBuilder : MonoBehaviour
 
         Gizmos.color = Color.green;
         var center = m_Tracked ? m_Tracked.position : transform.position;
-        Gizmos.DrawWireCube(center, m_Size);*/
+        Gizmos.DrawWireCube(center, m_Size);
     }
 
     public void OnGUI()

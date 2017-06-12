@@ -19,7 +19,7 @@
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
     <OutputPath>Temp\bin\Debug\</OutputPath>
-    <DefineConstants>DEBUG;TRACE;UNITY_5_3_OR_NEWER;UNITY_5_4_OR_NEWER;UNITY_5_5_OR_NEWER;UNITY_5_6_OR_NEWER;UNITY_5_6_1;UNITY_5_6;UNITY_5;UNITY_ANALYTICS;ENABLE_AUDIO;ENABLE_CACHING;ENABLE_CLOTH;ENABLE_GENERICS;ENABLE_PVR_GI;ENABLE_MICROPHONE;ENABLE_MULTIPLE_DISPLAYS;ENABLE_PHYSICS;ENABLE_RUNTIME_NAVMESH_BUILDING;ENABLE_SPRITERENDERER_FLIPPING;ENABLE_SPRITES;ENABLE_TERRAIN;ENABLE_RAKNET;ENABLE_UNET;ENABLE_LZMA;ENABLE_UNITYEVENTS;ENABLE_WEBCAM;ENABLE_WWW;ENABLE_CLOUD_SERVICES_COLLAB;ENABLE_CLOUD_SERVICES_ADS;ENABLE_CLOUD_HUB;ENABLE_CLOUD_PROJECT_ID;ENABLE_CLOUD_SERVICES_UNET;ENABLE_CLOUD_SERVICES_BUILD;ENABLE_CLOUD_LICENSE;ENABLE_EDITOR_METRICS;ENABLE_EDITOR_METRICS_CACHING;ENABLE_NATIVE_ARRAY;INCLUDE_DYNAMIC_GI;INCLUDE_GI;PLATFORM_SUPPORTS_MONO;INCLUDE_PUBNUB;ENABLE_PLAYMODE_TESTS_RUNNER;ENABLE_SCRIPTING_NEW_CSHARP_COMPILER;ENABLE_VIDEO;UNITY_ANDROID;ENABLE_SUBSTANCE;UNITY_ANDROID_API;ENABLE_EGL;ENABLE_NETWORK;ENABLE_RUNTIME_GI;ENABLE_CRUNCH_TEXTURE_COMPRESSION;ENABLE_UNITYWEBREQUEST;ENABLE_CLOUD_SERVICES;ENABLE_CLOUD_SERVICES_ANALYTICS;ENABLE_CLOUD_SERVICES_PURCHASING;ENABLE_CLOUD_SERVICES_CRASH_REPORTING;PLATFORM_SUPPORTS_ADS_ID;UNITY_CAN_SHOW_SPLASH_SCREEN;ENABLE_VR;ENABLE_UNITYADS_RUNTIME;UNITY_UNITYADS_API;ENABLE_MONO;NET_2_0_SUBSET;ENABLE_PROFILER;UNITY_ASSERTIONS;UNITY_EDITOR;UNITY_EDITOR_64;UNITY_EDITOR_WIN;ENABLE_NATIVE_ARRAY_CHECKS;UNITY_TEAM_LICENSE;UNITY_PRO_LICENSE;UNITY_HAS_GOOGLEVR</DefineConstants>
+    <DefineConstants>DEBUG;TRACE;UNITY_5_3_OR_NEWER;UNITY_5_4_OR_NEWER;UNITY_5_5_OR_NEWER;UNITY_5_6_OR_NEWER;UNITY_5_6_1;UNITY_5_6;UNITY_5;UNITY_ANALYTICS;ENABLE_AUDIO;ENABLE_CACHING;ENABLE_CLOTH;ENABLE_GENERICS;ENABLE_PVR_GI;ENABLE_MICROPHONE;ENABLE_MULTIPLE_DISPLAYS;ENABLE_PHYSICS;ENABLE_RUNTIME_NAVMESH_BUILDING;ENABLE_SPRITERENDERER_FLIPPING;ENABLE_SPRITES;ENABLE_TERRAIN;ENABLE_RAKNET;ENABLE_UNET;ENABLE_LZMA;ENABLE_UNITYEVENTS;ENABLE_WEBCAM;ENABLE_WWW;ENABLE_CLOUD_SERVICES_COLLAB;ENABLE_CLOUD_SERVICES_ADS;ENABLE_CLOUD_HUB;ENABLE_CLOUD_PROJECT_ID;ENABLE_CLOUD_SERVICES_UNET;ENABLE_CLOUD_SERVICES_BUILD;ENABLE_CLOUD_LICENSE;ENABLE_EDITOR_METRICS;ENABLE_EDITOR_METRICS_CACHING;ENABLE_NATIVE_ARRAY;INCLUDE_DYNAMIC_GI;INCLUDE_GI;PLATFORM_SUPPORTS_MONO;INCLUDE_PUBNUB;ENABLE_PLAYMODE_TESTS_RUNNER;ENABLE_SCRIPTING_NEW_CSHARP_COMPILER;ENABLE_VIDEO;UNITY_ANDROID;ENABLE_SUBSTANCE;UNITY_ANDROID_API;ENABLE_EGL;ENABLE_NETWORK;ENABLE_RUNTIME_GI;ENABLE_CRUNCH_TEXTURE_COMPRESSION;ENABLE_UNITYWEBREQUEST;ENABLE_CLOUD_SERVICES;ENABLE_CLOUD_SERVICES_ANALYTICS;ENABLE_CLOUD_SERVICES_PURCHASING;ENABLE_CLOUD_SERVICES_CRASH_REPORTING;PLATFORM_SUPPORTS_ADS_ID;UNITY_CAN_SHOW_SPLASH_SCREEN;ENABLE_VR;ENABLE_UNITYADS_RUNTIME;UNITY_UNITYADS_API;ENABLE_MONO;NET_2_0_SUBSET;DEVELOPMENT_BUILD;ENABLE_PROFILER;UNITY_ASSERTIONS;UNITY_EDITOR;UNITY_EDITOR_64;UNITY_EDITOR_WIN;ENABLE_NATIVE_ARRAY_CHECKS;UNITY_TEAM_LICENSE;UNITY_PRO_LICENSE;UNITY_HAS_GOOGLEVR</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <NoWarn>0169</NoWarn>
@@ -46,6 +46,53 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\3rdPersonShooter\Character Controller Scripts\AccelerationCharacterController.cs" />
+     <Compile Include="Assets\3rdPersonShooter\Character Controller Scripts\AimLookCharacterController.cs" />
+     <Compile Include="Assets\3rdPersonShooter\Character Controller Scripts\CharacterMotor.cs" />
+     <Compile Include="Assets\3rdPersonShooter\Character Controller Scripts\FPSCharacterController.cs" />
+     <Compile Include="Assets\3rdPersonShooter\Character Controller Scripts\Follower.cs" />
+     <Compile Include="Assets\3rdPersonShooter\Character Controller Scripts\JumpAndIdle.cs" />
+     <Compile Include="Assets\3rdPersonShooter\Character Controller Scripts\MouseLookCharacterController.cs" />
+     <Compile Include="Assets\3rdPersonShooter\Character Controller Scripts\NormalCharacterMotor.cs" />
+     <Compile Include="Assets\3rdPersonShooter\Character Controller Scripts\PhysicsCharacterMotor.cs" />
+     <Compile Include="Assets\3rdPersonShooter\Character Controller Scripts\PlatformCharacterController.cs" />
+     <Compile Include="Assets\3rdPersonShooter\Character Controller Scripts\WanderingAICharacterController.cs" />
+     <Compile Include="Assets\3rdPersonShooter\Demo Scene Scripts\AnimationDebugOutput.cs" />
+     <Compile Include="Assets\3rdPersonShooter\Demo Scene Scripts\CharacterShadow.cs" />
+     <Compile Include="Assets\3rdPersonShooter\Demo Scene Scripts\CharacterShadowHelper.cs" />
+     <Compile Include="Assets\3rdPersonShooter\Demo Scene Scripts\DeathManager.cs" />
+     <Compile Include="Assets\3rdPersonShooter\Demo Scene Scripts\DetachChildrenAndDestroy.cs" />
+     <Compile Include="Assets\3rdPersonShooter\Demo Scene Scripts\ExecutionOrderController.cs" />
+     <Compile Include="Assets\3rdPersonShooter\Demo Scene Scripts\FollowTransform.cs" />
+     <Compile Include="Assets\3rdPersonShooter\Demo Scene Scripts\HealthController.cs" />
+     <Compile Include="Assets\3rdPersonShooter\Demo Scene Scripts\MenuController.cs" />
+     <Compile Include="Assets\3rdPersonShooter\Demo Scene Scripts\Orb\Frenzy.cs" />
+     <Compile Include="Assets\3rdPersonShooter\Demo Scene Scripts\Orb\OrbController.cs" />
+     <Compile Include="Assets\3rdPersonShooter\Demo Scene Scripts\Player\ArmIK.cs" />
+     <Compile Include="Assets\3rdPersonShooter\Demo Scene Scripts\Player\GunAimer.cs" />
+     <Compile Include="Assets\3rdPersonShooter\Demo Scene Scripts\Player\HeadLookController.cs" />
+     <Compile Include="Assets\3rdPersonShooter\Demo Scene Scripts\Player\ImpactController.cs" />
+     <Compile Include="Assets\3rdPersonShooter\Demo Scene Scripts\Player\RagdollInstantiator.cs" />
+     <Compile Include="Assets\3rdPersonShooter\Demo Scene Scripts\Player\SoundEffectController.cs" />
+     <Compile Include="Assets\3rdPersonShooter\Demo Scene Scripts\Player\SpeechController.cs" />
+     <Compile Include="Assets\3rdPersonShooter\Demo Scene Scripts\Player\WeaponStateController.cs" />
+     <Compile Include="Assets\3rdPersonShooter\Demo Scene Scripts\ProgressBar.cs" />
+     <Compile Include="Assets\3rdPersonShooter\Demo Scene Scripts\ShooterGameCamera.cs" />
+     <Compile Include="Assets\3rdPersonShooter\Frameworks\Locomotion System\AlignmentTracker.cs" />
+     <Compile Include="Assets\3rdPersonShooter\Frameworks\Locomotion System\GhostOriginal.cs" />
+     <Compile Include="Assets\3rdPersonShooter\Frameworks\Locomotion System\IK1JointAnalytic.cs" />
+     <Compile Include="Assets\3rdPersonShooter\Frameworks\Locomotion System\IKSimple.cs" />
+     <Compile Include="Assets\3rdPersonShooter\Frameworks\Locomotion System\IKSolver.cs" />
+     <Compile Include="Assets\3rdPersonShooter\Frameworks\Locomotion System\IMotionAnalyzer.cs" />
+     <Compile Include="Assets\3rdPersonShooter\Frameworks\Locomotion System\Interpolator.cs" />
+     <Compile Include="Assets\3rdPersonShooter\Frameworks\Locomotion System\LegAnimator.cs" />
+     <Compile Include="Assets\3rdPersonShooter\Frameworks\Locomotion System\LegController.cs" />
+     <Compile Include="Assets\3rdPersonShooter\Frameworks\Locomotion System\MotionAnalyzer.cs" />
+     <Compile Include="Assets\3rdPersonShooter\Frameworks\Locomotion System\MotionAnalyzerBackwards.cs" />
+     <Compile Include="Assets\3rdPersonShooter\Frameworks\Locomotion System\PolarGradientBandInterpolator.cs" />
+     <Compile Include="Assets\3rdPersonShooter\Frameworks\Locomotion System\TrajectoryVisualizer.cs" />
+     <Compile Include="Assets\3rdPersonShooter\Frameworks\Locomotion System\Util.cs" />
+     <Compile Include="Assets\3rdPersonShooter\Shaders\BumpLightMap.cs" />
      <Compile Include="Assets\Google-Unity\Scripts\AndroidHelper.cs" />
      <Compile Include="Assets\Google-Unity\Scripts\AndroidLifecycle.cs" />
      <Compile Include="Assets\NavMeshComponents\Scripts\NavMeshLink.cs" />
@@ -69,6 +116,7 @@
      <Compile Include="Assets\Script\KittyUIController.cs" />
      <Compile Include="Assets\Script\MeshLoader.cs" />
      <Compile Include="Assets\Script\MeshSerializer.cs" />
+     <Compile Include="Assets\Script\NavmeshView.cs" />
      <Compile Include="Assets\Script\Test.cs" />
      <Compile Include="Assets\Script\WASD.cs" />
      <Compile Include="Assets\Script\Wireframe.cs" />
@@ -164,6 +212,7 @@
      <Compile Include="Assets\TangoSDK\TangoUX\Scripts\Interfaces\ITangoUXMultithreaded.cs" />
      <Compile Include="Assets\TangoSDK\TangoUX\Scripts\Listeners\UxExceptionEventListener.cs" />
      <Compile Include="Assets\TangoSDK\TangoUX\Scripts\TangoUx.cs" />
+     <None Include="Assets\3rdPersonShooter\Shaders\ProgressBar.shader" />
      <None Include="Assets\TangoSDK\Examples\ExperimentalMeshOcclusion\Shaders\ZTestBlur.shader" />
      <None Include="Assets\TangoPrefabs\Shaders\TangoEnvironmentalLighting\EnvironmentalLightingStandard.shader" />
      <None Include="Assets\TangoSDK\Examples\SimpleAugmentedReality\Textures\README.txt" />
@@ -171,6 +220,7 @@
      <None Include="Assets\TangoSDK\Core\Shaders\RGB_ARScreen.shader" />
      <None Include="Assets\TangoPrefabs\Shaders\YUV2RGB.shader" />
      <None Include="Assets\TangoSDK\Core\Shaders\RGB2YUV_CbCr.shader" />
+     <None Include="Assets\3rdPersonShooter\Shaders\FadedAddSmooth.shader" />
      <None Include="Assets\UCLAGameLab\Wireframe\Shaders\UCLA GameLab Wireframe Functions.cginc" />
      <None Include="Assets\TangoPrefabs\Shaders\ARPostProcess.shader" />
      <None Include="Assets\TangoSDK\Examples\ExperimentalMeshBuilderWithPhysics\Shader\UnlitColor.shader" />
@@ -193,6 +243,7 @@
      <None Include="Assets\UCLAGameLab\Wireframe\Shaders\UCLA GameLab Cutout Wireframe.shader" />
      <None Include="Assets\UCLAGameLab\Wireframe\Shaders\UCLA GameLab Double-Sided Wireframe.shader" />
      <None Include="Assets\UCLAGameLab\Wireframe\Shaders\UCLA GameLab Double-Sided Cutout Wireframe.shader" />
+     <None Include="Assets\Res\Mask.shader" />
      <None Include="Assets\TangoPrefabs\Shaders\TangoEnvironmentalLighting\EnvironmentalLightingDiffuse.shader" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
